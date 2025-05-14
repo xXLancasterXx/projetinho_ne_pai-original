@@ -4,12 +4,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return '<a href=''./contatos''>Hello, World!</a>'
+    return render_template('index.html')
 
 
-@app.route('/contatos')
-def contatos():
-    return render_template('contatos.html')
+@app.route('/usuarios')
+@app.route('/usuarios/<string:usuario>')
+def usuarios(usuario="Seu Nome aqui"):
+    return render_template('usuarios.html', usuario=usuario)
+
+
+
+
 
 
 if __name__ == '__main__':
