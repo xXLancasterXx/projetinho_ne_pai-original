@@ -6,11 +6,31 @@
     <title>{{ usuario }}</title>
 </head>
 <body>
-    <h1>Usuário: {{ usuario }}</h1>
-    <img src="{{ url_for('static', filename= 'img/'+usuario+'.jpg') }}" alt="">
-    <form action="" method="get">
+    <form action="{{ url_for('dados') }}" method="post">
         <label for="usuario">Nome do usuário:</label>
-        <input type="text" id="usuario" name="usuario" placeholder="{{ usuario }}" required>
+        <input type="text" id="usuario" name="usuario" placeholder="{{ usuario }}" required><br>
+
+        <label for="Gil Bala">Estado</label> <br
+        <select name="Gil Bala" id="sim">
+            <option value="RN">RN</option>
+            <option value="RJ">RJ</option>
+            <option value="RS">RS</option>
+            <option value="RR">RO</option>
+        </select> <br>
+
+        <label for="escola">Escolaridade</label><br>
+        <input type="radio" name="formacao" id="efi" value="Ensino Fundamental I">Ensino Fundamental I <br>
+        <input type="radio" name="formacao" id="efii" value="Ensino Fundamental II">Ensino Fundamental II <br>
+        <input type="radio" name="formacao" id="em" value="Ensino Médio">Ensino Médio <br>
+        <input type="radio" name="formacao" id="es" value="Ensino Superior">Ensino Superior <br>
+
+        <label for="esportes">Esportes de Interesse</label><br>
+        <input type="checkbox" name="esportes" id="futebol" value="Futebol">Futebol <br>
+        <input type="checkbox" name="esportes" id="volei" value="Volei">Volei <br>
+        <input type="checkbox" name="esportes" id="basquete" value="Basquete">Basquete <br>
+        <input type="checkbox" name="esportes" id="natacao" value="Natação">Natação <br>
+
+
         <button type="submit">Enviar</button>
     </form>
     <a href="/">Voltar</a>
